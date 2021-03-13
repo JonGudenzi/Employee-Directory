@@ -36,7 +36,7 @@ class App extends Component {
     } else {
       return (
         <div className="container">
-          <Search handleChange={(e) => this.setState({searchTerm: e.target.value})}/>
+          <Search handleChange={(e) => this.setState({searchTerm: e.target.value.toLowerCase()})}/>
           <EmployeeProfile items={this.state.items} searchTerm={this.state.searchTerm}/>
 
         </div>

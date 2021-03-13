@@ -5,12 +5,26 @@ const EmployeeProfile = (props) => {
         <div>
             {console.log(props.searchTerm)}
             {props.items.map(item => (
-                <>
-                    <img src={item.picture.large} alt={item.name.first} />
+                <table>
+                    <thead>
 
-                    <p>{item.name.first}</p>
-
-                </>
+                        <th>
+                            <img src={item.picture.large} alt={item.name.first} />
+                        </th>
+                        <tbody>
+                            <p>
+                                <tr>Name</tr>
+                                <td>{item.name.first} {item.name.last}</td>
+                                <tr>Phone</tr>
+                                <td>{item.phone}</td>
+                                <tr>Email</tr>
+                                <td>{item.email}</td>
+                                <tr>Age</tr>
+                                <td>{item.dob.age}</td>
+                            </p>
+                        </tbody>
+                    </thead>
+                </table>
             ))}
 
         </div>

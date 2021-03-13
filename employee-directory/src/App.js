@@ -1,8 +1,10 @@
 import './App.css';
 import React, { Component } from 'react';
+import Api from "./components/utils/API";
+import EmployeeProfile from "./components/Data/EmployeeProfile";
+import Search from "./components/Search";
 
 class App extends Component {
-
   constructor(props) {
     super(props)
     this.state = {
@@ -10,22 +12,19 @@ class App extends Component {
       loading: false
     }
   }
-  componentDidMount() {
-    fetch('https://randomuser.me/api/?results=50')
-      .then((response) => response.json())
-      .then((response) => {
-        this.setState({
-          items: response.results,
-          loading: true
-
-        })
+  async componentDidMount() {
+      const employeeData = await Api
+      this.setState({
+        items: employeeData,
+        loading: true,
+        searchTerm: ""
       })
   }
 
   render() {
 
     const { items, loading } = this.state
-
+// console.log(this.state.items);
     if (!loading) {
       return (
         <div>Loading</div>
@@ -33,17 +32,13 @@ class App extends Component {
     } else {
       return (
         <div className="container">
-          {items.map(item => ( 
-            <img src={item.picture.large} alt={item.name.first}/>
-          ))}
+          <Search handleChange={(e) => this.setState({searchTerm: e.target.value})}/>
+          <EmployeeProfile items={this.state.items} searchTerm={this.state.searchTerm}/>
+
         </div>
       )
     }
-    return (
-      <div>
-
-      </div>
-    )
+    
   }
 }
 

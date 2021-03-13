@@ -10,14 +10,18 @@ class App extends Component {
     this.state = {
       items: [],
       loading: false
+      
     }
   }
+
+  
   async componentDidMount() {
       const employeeData = await Api
       this.setState({
         items: employeeData,
         loading: true,
         searchTerm: ""
+
       })
   }
 

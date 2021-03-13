@@ -4,6 +4,7 @@ const Search = (props) => {
     return(
         <div>
             <input type="text" onChange={props.handleChange}></input>
+            <button type="search">Search</button>
         </div>
     )
 }

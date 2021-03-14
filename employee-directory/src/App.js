@@ -19,8 +19,8 @@ class App extends Component {
     this.setState({
       items: employeeData,
       loading: true,
-      searchTerm: ""
-
+      searchTerm: "",
+      FilteredEmployeeData: []
     })
   }
 
@@ -36,7 +36,7 @@ class App extends Component {
       return (
         <div className="container">
           <Search handleChange={(e) => this.setState({ searchTerm: e.target.value.toLowerCase() })}/>
-          <EmployeeProfile items={this.state.items} searchTerm={this.state.searchTerm} />
+          <EmployeeProfile items={this.state.items} searchTerm={this.state.searchTerm} FilteredEmployeeData={this.setState.searchTerm.filter()}/>
 
         </div>
       )

@@ -10,10 +10,9 @@ class App extends Component {
     this.state = {
       items: [],
       loading: false
-
     }
   }
-
+  
   async componentDidMount() {
     const employeeData = await Api
     this.setState({
@@ -21,11 +20,18 @@ class App extends Component {
       loading: true,
       searchTerm: "",
       FilteredEmployeeData: []
-    })
+    }
+    )
   }
 
-  render() {
+  // handleSearch = function(item) {
+  //   if (item.name.first.includes(searchTerm) || item.name.last.includes(searchTerm)) {
+  //     return true;
+  //   }
+  //   return false;
+  // }
 
+  render() {
     const { items, loading } = this.state
     console.log(this.state.items);
     if (!loading) {
@@ -36,13 +42,16 @@ class App extends Component {
       return (
         <div className="container">
           <Search handleChange={(e) => this.setState({ searchTerm: e.target.value.toLowerCase() })}/>
-          <EmployeeProfile items={this.state.items} searchTerm={this.state.searchTerm} FilteredEmployeeData={this.setState.searchTerm.filter()}/>
+          <EmployeeProfile items={this.state.items} searchTerm={this.state.searchTerm} />
 
         </div>
       )
     }
 
   }
+
+
+
 }
 
 export default App;

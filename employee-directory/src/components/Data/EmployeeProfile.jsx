@@ -1,12 +1,9 @@
 import React from "react";
 
 const EmployeeProfile = (props) => {
-
     return (
-        <div>
-            {/* {console.log(props.searchTerm)} */}
-            {/* {props.items.map(item => ( */}
 
+        <div>
             <table className="table">
                 <thead>
                     <tr>
@@ -20,7 +17,6 @@ const EmployeeProfile = (props) => {
 
                 {props.items.map(item => (
                     <tbody>
-                        
                         <td>
                             <img src={item.picture.large} alt={item.name.first} />
                         </td>
@@ -29,9 +25,6 @@ const EmployeeProfile = (props) => {
                         <td>{item.email}</td>
                         <td>{item.dob.age}</td>
                     </tbody>
-
-                    
-
                 ))}
             </table>
         </div>

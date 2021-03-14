@@ -10,25 +10,24 @@ class App extends Component {
     this.state = {
       items: [],
       loading: false
-      
+
     }
   }
 
-  
   async componentDidMount() {
-      const employeeData = await Api
-      this.setState({
-        items: employeeData,
-        loading: true,
-        searchTerm: ""
+    const employeeData = await Api
+    this.setState({
+      items: employeeData,
+      loading: true,
+      searchTerm: ""
 
-      })
+    })
   }
 
   render() {
 
     const { items, loading } = this.state
-// console.log(this.state.items);
+    console.log(this.state.items);
     if (!loading) {
       return (
         <div>Loading</div>
@@ -36,13 +35,13 @@ class App extends Component {
     } else {
       return (
         <div className="container">
-          <Search handleChange={(e) => this.setState({searchTerm: e.target.value.toLowerCase()})}/>
-          <EmployeeProfile items={this.state.items} searchTerm={this.state.searchTerm}/>
+          <Search handleChange={(e) => this.setState({ searchTerm: e.target.value.toLowerCase() })}/>
+          <EmployeeProfile items={this.state.items} searchTerm={this.state.searchTerm} />
 
         </div>
       )
     }
-    
+
   }
 }
 

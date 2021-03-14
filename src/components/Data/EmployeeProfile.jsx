@@ -15,15 +15,17 @@ const EmployeeProfile = (props) => {
                     </tr>
                 </thead>
 
-                {props.items.map(item => (
-                    <tbody>
-                        <td>
-                            <img src={item.picture.large} alt={item.name.first} />
-                        </td>
-                        <td>{item.name.first} {item.name.last}</td>
-                        <td>{item.phone}</td>
-                        <td>{item.email}</td>
-                        <td>{item.dob.age}</td>
+                {props.items.map((item, index) => (
+                    <tbody key={index}>
+                        <tr>
+                            <td>
+                                <img src={item.picture.large} alt={item.name.first} />
+                            </td>
+                            <td>{item.name.first} {item.name.last}</td>
+                            <td>{item.phone}</td>
+                            <td>{item.email}</td>
+                            <td>{item.dob.age}</td>
+                        </tr>
                     </tbody>
                 ))}
             </table>

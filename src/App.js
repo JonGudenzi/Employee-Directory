@@ -12,7 +12,7 @@ class App extends Component {
       loading: false
     }
   }
-  
+
   async componentDidMount() {
     const employeeData = await Api
     this.setState({
@@ -41,7 +41,7 @@ class App extends Component {
     } else {
       return (
         <div className="container">
-          <Search handleChange={(e) => this.setState({ searchTerm: e.target.value.toLowerCase() })}/>
+          <Search handleChange={(e) => this.setState({ searchTerm: e.target.value.toLowerCase() })} />
           <EmployeeProfile items={this.state.items} searchTerm={this.state.searchTerm} />
 
         </div>

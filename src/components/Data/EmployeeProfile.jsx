@@ -7,9 +7,9 @@ const EmployeeProfile = (props) => {
             <table className="table table-striped table-resposive text-center table-hover">
                 <thead>
                     <tr>
-                        <th>Image</th>
-                        <th>First Name<span className='downArrow' onClick={props.sortByFName}>⬇︎</span></th>
-                        <th>Last Name<span className='downArrow' onClick={props.sortByLName}>⬇︎</span></th>
+                        <th>Profile Image</th>
+                        <th>First Name<span className='downArrow' onClick={props.sortByFName}>🌴</span></th>
+                        <th>Last Name<span className='downArrow' onClick={props.sortByLName}>🌴</span></th>
                         <th>Phone</th>
                         <th>Email</th>
                         <th>Age</th>

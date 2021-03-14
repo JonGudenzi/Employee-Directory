@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Shojumaru&display=swap');
+
+*{
+  text-align: center;  
+  font-weight: bold;
+  
+}
+
+.jumbotron{
+    font-family: 'Shojumaru', cursive;
+    font-weight: bold;
+}
+
+.jumbotron.jumbotron-aqua{
+    background-color: aquamarine;
+}
+
+p{
+    font-size: 20px;
+}

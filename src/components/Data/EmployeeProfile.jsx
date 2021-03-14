@@ -8,8 +8,8 @@ const EmployeeProfile = (props) => {
                 <thead>
                     <tr>
                         <th>Image</th>
-                        <th>First Name<span className="downArrow" onClick={props.sortByFName}></span></th>
-                        <th>Last Name<span className="downArrow" onClick={props.sortByLName}></span></th>
+                        <th>First Name<span className='downArrow' onClick={props.sortByFName}>⬇︎</span></th>
+                        <th>Last Name<span className='downArrow' onClick={props.sortByLName}>⬇︎</span></th>
                         <th>Phone</th>
                         <th>Email</th>
                         <th>Age</th>

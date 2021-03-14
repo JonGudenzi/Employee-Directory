@@ -85,7 +85,7 @@ class App extends Component {
       return (
         <div className="container">
           <Search handleChange={(e) => this.setState({ searchTerm: e.target.value.toLowerCase() })} />
-          <EmployeeProfile items={this.state.items} searchTerm={this.state.searchTerm} />
+          <EmployeeProfile items={this.state.items} searchTerm={this.state.searchTerm} sortByLName={this.sortByLName} sortByFName={this.sortByFName}/>
 
         </div>
       )

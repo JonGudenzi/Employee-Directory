@@ -33,7 +33,7 @@ class App extends Component {
 
   render() {
     const { items, loading } = this.state
-    console.log(this.state.items);
+    // console.log(this.state.items);
     if (!loading) {
       return (
         <div>Loading</div>

@@ -24,6 +24,49 @@ class App extends Component {
     )
   }
 
+  //Sort by first name 
+  sortByFName = () => {
+    const sortedEmployees = this.state.items.sort((a, b) => {
+      if (b.name.first > a.name.first) {
+        return -1
+      }
+      if (a.name.first > b.name.first) {
+        return 1
+      }
+      return 0;
+    });
+
+    if (this.state.sortOrder === "DESC") {
+      sortedEmployees.reverse();
+      this.setState({ sortOrder: "ASC" });
+    } else {
+      this.setState({ sortOrder: "DESC" });
+    }
+    this.setState({ results: sortedEmployees })
+  }
+
+  //Sort by last name 
+  sortByLName = () => {
+    const sortedEmployees = this.state.items.sort((a, b) => {
+      if (b.name.last > a.name.last) {
+        return -1
+      }
+      if (a.name.last > b.name.last) {
+        return 1
+      }
+      return 0;
+    });
+    if (this.state.sortOrder === "DESC") {
+      sortedEmployees.reverse();
+      this.setState({ sortOrder: "ASC" });
+    } else {
+      this.setState({ sortOrder: "DESC" });
+    }
+    this.setState({ results: sortedEmployees })
+  }
+
+
+
   // handleSearch = function(item) {
   //   if (item.name.first.includes(searchTerm) || item.name.last.includes(searchTerm)) {
   //     return true;

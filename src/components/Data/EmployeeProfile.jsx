@@ -3,12 +3,13 @@ import React from "react";
 const EmployeeProfile = (props) => {
     return (
 
-        <div>
-            <table className="table">
+        <div className="table-responsive">
+            <table className="table table-striped table-resposive text-center table-hover">
                 <thead>
                     <tr>
                         <th>Image</th>
-                        <th>Name</th>
+                        <th>First Name<span className="downArrow" onClick={props.sortByFName}></span></th>
+                        <th>Last Name<span className="downArrow" onClick={props.sortByLName}></span></th>
                         <th>Phone</th>
                         <th>Email</th>
                         <th>Age</th>
@@ -21,7 +22,8 @@ const EmployeeProfile = (props) => {
                             <td>
                                 <img src={item.picture.large} alt={item.name.first} />
                             </td>
-                            <td>{item.name.first} {item.name.last}</td>
+                            <td>{item.name.first} </td>
+                            <td>{item.name.last}</td>
                             <td>{item.phone}</td>
                             <td>{item.email}</td>
                             <td>{item.dob.age}</td>

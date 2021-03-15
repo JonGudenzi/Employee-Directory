@@ -65,15 +65,13 @@ class App extends Component {
     this.setState({ results: sortedEmployees })
   }
 
-
-
-  // handleSearch = function(item) {
-  //   if (item.name.first.includes(searchTerm) || item.name.last.includes(searchTerm)) {
-  //     return true;
-  //   }
-  //   return false;
-  // }
-
+  handleSearch = function(item) {
+    if (item.name.first.includes(searchTerm) || item.name.last.includes(searchTerm)) {
+      return true;
+    }
+    return false;
+  }
+ 
   render() {
     const { items, loading } = this.state
     // console.log(this.state.items);
@@ -83,10 +81,11 @@ class App extends Component {
       )
     } else {
       return (
+        
         <div className="container">
           <Search handleChange={(e) => this.setState({ searchTerm: e.target.value.toLowerCase() })} />
-          <EmployeeProfile items={this.state.items} searchTerm={this.state.searchTerm} sortByLName={this.sortByLName} sortByFName={this.sortByFName}/>
-
+          <EmployeeProfile items={this.state.items} searchTerm={this.state.searchTerm} sortByLName={this.sortByLName} sortByFName={this.sortByFName} handleSearch={this.state.searchTerm} filteredEmp={this.state.FilteredEmployeeData}/>
+          
         </div>
       )
     }

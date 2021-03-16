@@ -4,12 +4,11 @@ const Search = (props) => {
     return (
         <div>
 
-            <input value={props.searchTerm}
+            <input  value={props.searchTerm}
                 type="text"
                 onChange={props.handleChange}
                 name="search"
-                placeholder="Search for Employee"
-                filteredEmp={props.FilteredEmployeeData}>
+                placeholder="Search for Employee">
             </input>
             <button type="search">Search</button>
         </div>

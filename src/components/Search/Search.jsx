@@ -4,9 +4,9 @@ const Search = (props) => {
     return (
         <div>
 
-            <input  value={props.searchTerm}
+            <input searchTerm={props.searchTerm}
                 type="text"
-                onChange={props.handleChange}
+                employee={props.employee}
                 name="search"
                 placeholder="Search for Employee">
             </input>

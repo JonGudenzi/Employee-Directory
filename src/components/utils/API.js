@@ -4,6 +4,7 @@ const Api = new Promise( (resolve, reject) =>{
  .then((response) => {
    resolve (response.results) 
    
+   
  })
 
 });

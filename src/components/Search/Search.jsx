@@ -8,9 +8,10 @@ const Search = (props) => {
                 type="text"
                 employee={props.employee}
                 name="search"
-                placeholder="Search for Employee">
+                placeholder="Search for Employee" 
+                onChange={props.changeHandle}>
             </input>
-            <button type="search">Search</button>
+            
         </div>
     )
 }

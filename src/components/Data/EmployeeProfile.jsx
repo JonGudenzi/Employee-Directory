@@ -16,8 +16,9 @@ const EmployeeProfile = (props) => {
                     </tr>
                 </thead>
 
-                {props.items.map((item, index) => (
+                {props.items && props.employee.map((item, index) => (
                     <tbody key={index}>
+
                         <tr>
                             <td>
                                 <img src={item.picture.large} alt={item.name.first} />

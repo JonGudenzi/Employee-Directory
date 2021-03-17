@@ -20,7 +20,7 @@ class App extends Component {
       items: employeeData,
       loading: true,
       searchTerm: "",
-      employee: [],
+      employee: []
     });
   }
 
@@ -64,25 +64,26 @@ class App extends Component {
     }
     this.setState({ results: sortedEmployees });
   };
-  ///////////////////////////////////////////////
 
+  // search for employee
   onChange = (e) => {
     const searchInput = e.target.value.toLowerCase();
 
-    const newEmployeeList = this.state.item.filter((employee) => {
+    const newEmployeeList = this.state.items.filter((employee) => {
       const employeeResult = employee.name.first + employee.name.last;
       return employeeResult.toLowerCase().includes(searchInput);
     });
+// console.log(newEmployeeList)
 
     this.setState({
       employee: newEmployeeList,
-      searchTerm: searchInput,
+      searchTerm: searchInput
     });
   };
 
-  //////////////////////////////////////////////////
+
   render() {
-    const { loading } = this.state;
+    const { items, loading } = this.state;
     console.log(this.state.items);
     if (!loading) {
       return <div>Loading</div>;
@@ -91,11 +92,12 @@ class App extends Component {
         <div className="container">
           <Search
             handleChange={(e) => this.setState({ searchTerm: e.target.value })}
-            changeHandle={this.onChange}
+            changeHandle={this.onChange} 
           />
 
           <EmployeeProfile
             items={this.state.items}
+            employee={this.state.employee}
             searchTerm={this.state.searchTerm}
             sortByLName={this.sortByLName}
             sortByFName={this.sortByFName}

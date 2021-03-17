@@ -7,6 +7,8 @@
   This application will show a list of employees with information for each one including an image, name, phone number, email and age.  The user will be able to search for an employee by typing in a piece of the persons name which will filter out others.  The user will also be able to sort by their name.
 
   [🌴 CLICK HERE for the deployed app of Employee-Directory](https://jongudenzi.github.io/Employee-Directory/)
+
+   <img src="public/ed.PNG" width="500" height="250">
   
   <br>
 

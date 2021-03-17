@@ -16,7 +16,7 @@ const EmployeeProfile = (props) => {
                     </tr>
                 </thead>
 
-                {props.items && props.employee.map((item, index) => (
+                {props.employee.map((item, index) => (
                     <tbody key={index}>
 
                         <tr>

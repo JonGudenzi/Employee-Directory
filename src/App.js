@@ -66,7 +66,7 @@ class App extends Component {
   };
 
   // search for employee
-  onChange = (e) => {
+  handleInputChange = (e) => {
     const searchInput = e.target.value.toLowerCase();
 
     const newEmployeeList = this.state.items.filter((employee) => {
@@ -92,11 +92,11 @@ class App extends Component {
         <div className="container">
           <Search
             handleChange={(e) => this.setState({ searchTerm: e.target.value })}
-            changeHandle={this.onChange} 
+            changeHandle={this.handleInputChange} 
           />
 
           <EmployeeProfile
-            items={this.state.items}
+            items={items}
             employee={this.state.employee}
             searchTerm={this.state.searchTerm}
             sortByLName={this.sortByLName}

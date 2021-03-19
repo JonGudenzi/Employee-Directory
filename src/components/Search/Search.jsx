@@ -9,7 +9,7 @@ const Search = (props) => {
                 employee={props.employee}
                 name="search"
                 placeholder="Search for Employee" 
-                onChange={props.changeHandle}>
+                onChange={props.handleChange}>
             </input>
             
         </div>

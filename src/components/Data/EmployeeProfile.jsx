@@ -16,7 +16,10 @@ const EmployeeProfile = (props) => {
                     </tr>
                 </thead>
 
-                {props.employee.map((item, index) => (
+                {props.items.filter((employee) => {
+                    const employeeResult = employee.name.first + employee.name.last;
+                    return employeeResult.toLowerCase().includes(props.searchTerm);
+                }).map((item, index) => (
                     <tbody key={index}>
 
                         <tr>

@@ -4,7 +4,7 @@ const Search = (props) => {
     return (
         <div>
 
-            <input searchTerm={props.searchTerm}
+            <input searchterm={props.searchterm}
                 type="text"
                 employee={props.employee}
                 name="search"

@@ -19,7 +19,7 @@ class App extends Component {
     this.setState({
       items: employeeData,
       loading: true,
-      searchTerm: "",
+      searchterm: "",
       employee: []
     });
   }
@@ -77,31 +77,30 @@ class App extends Component {
 
     this.setState({
       employee: newEmployeeList,
-      searchTerm: searchInput
+      searchterm: searchInput
     });
   };
 
 
   render() {
     const { items, loading } = this.state;
-    console.log(this.state.items);
     if (!loading) {
       return <div>Loading</div>;
     } else {
       return (
         <div className="container">
           <Search
-            handleChange={(e) => this.setState({ searchTerm: e.target.value })}
+            handleChange={(e) => this.setState({ searchterm: e.target.value })}
             changeHandle={this.handleInputChange} 
           />
 
           <EmployeeProfile
             items={items}
             employee={this.state.employee}
-            searchTerm={this.state.searchTerm}
+            searchterm={this.state.searchterm}
             sortByLName={this.sortByLName}
             sortByFName={this.sortByFName}
-            handleSearch={this.state.searchTerm}
+            handleSearch={this.state.searchterm}
           />
         </div>
       );

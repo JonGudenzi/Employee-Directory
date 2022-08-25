@@ -4,7 +4,7 @@ const EmployeeProfile = (props) => {
     return (
 
         <div className="table-responsive">
-            <table className="table table-striped table-resposive text-center table-hover">
+            <table className="table table-striped table-responsive text-center table-hover">
                 <thead>
                     <tr>
                         <th>Profile Image</th>
@@ -18,7 +18,7 @@ const EmployeeProfile = (props) => {
 
                 {props.items.filter((employee) => {
                     const employeeResult = employee.name.first + employee.name.last;
-                    return employeeResult.toLowerCase().includes(props.searchTerm);
+                    return employeeResult.toLowerCase().includes(props.searchterm);
                 }).map((item, index) => (
                     <tbody key={index}>
 
